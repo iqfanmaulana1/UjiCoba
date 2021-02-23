@@ -1,5 +1,5 @@
 @extends('layout.v_template')
-@section('title', 'Detail Guru')
+@section('title', 'Add Guru')
 
 @section('content')
 

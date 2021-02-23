@@ -2,7 +2,7 @@
 @section('title', 'Guru')
 
 @section('content')
-<a href="/guru/add" class="btn btn-primary btn-sm">Add</a>
+<a href="/guru/add" class="btn btn-primary">Add</a>
 @if (session('pesan'))
     <div class="alert alert-success alert_dismissable">
         <button type="button" class="close" data_dismiss="alert" aria-hidden="true">&times;</button>
@@ -30,8 +30,8 @@
                 <td> {{ $data->mapel}} </td>
                 <td> <img src="{{ url('foto_guru/',$data->foto_guru) }}" width="100px"></td>
                 <td>
-                    <a href="/guru/detail/{{ $data->id_guru }}" class="btn btn-sm btn-success">Detail</a>
-                    <a href="/guru/edit/{{ $data->id_guru }}" class="btn btn-sm btn-primary">edit</a>
+                    <a href="/guru/detail/{{ $data->id_guru }}" class="btn btn-success">Detail</a>
+                    <a href="/guru/edit/{{ $data->id_guru }}" class="btn btn-primary">edit</a>
                     <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete{{ $data->id_guru }}">
                         Hapus
                     </button>

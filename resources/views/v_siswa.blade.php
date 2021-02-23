@@ -2,8 +2,15 @@
 @section('title', 'Siswa')
 
 @section('content')
-<a href="/siswa/print" target="_blank" class="btn btn-primary">Print printer</a>
-<a href="/siswa/printpdf" target="_blank" class="btn btn-success">Print PDF</a>
+<a href="/siswa/add" class="btn btn-primary">Add</a>
+@if (session('pesan'))
+    <div class="alert alert-success alert_dismissable">
+        <button type="button" class="close" data_dismiss="alert" aria-hidden="true">&times;</button>
+        <h4><i class="icon fa fa-check"></i> Alert!</h4>
+        {{ session('pesan') }}.
+    </div>
+@endif
+
 
 <table class="table table-bordered">
         <thead>
@@ -24,9 +31,41 @@
                     <td>{{ $data->nama_siswa }}</td>
                     <td>{{ $data->kelas }}</td>
                     <td>{{ $data->jurusan }}</td>
+                    <td>
+                    <a href="/siswa/detail/{{ $data->id_siswa }}" class="btn btn-success">Detail</a>
+                    <a href="/siswa/edit/{{ $data->id_siswa }}" class="btn btn-primary">edit</a>
+                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete{{ $data->id_siswa }}">
+                        Hapus
+                    </button>
+                </td>
                 </tr>
             @endforeach
         </tbody>
 </table>
+<!-- <a href="/siswa/print" target="_blank" class="btn btn-primary">Print printer</a>
+<a href="/siswa/printpdf" target="_blank" class="btn btn-success">Print PDF</a> -->
 
+
+@foreach($siswa as $data)
+    <div class="modal modal-danger fade" id="delete{{ $data->id_siswa }}">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">{{ $data->nama_siswa }}</h4>
+              </div>
+              <div class="modal-body">
+                <p>Apakah Anda Ingin Menghapus Data Ini??</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-outline pull-left" data-dismiss="modal">NO</button>
+                <a href="/siswa/delete/{{ $data->id_siswa }}" class="btn btn-outline">YES</a>
+              </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+          <!-- /.modal-dialog -->
+    </div>
+    @endforeach
 @endsection
