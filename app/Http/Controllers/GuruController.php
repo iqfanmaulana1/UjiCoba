@@ -3,15 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-<<<<<<< HEAD
-
-class GuruController extends Controller
-{
-    public function index()
-    {
-       
-        return view('v_guru');
-=======
 use App\Models\GuruModel;
 
 class GuruController extends Controller
@@ -124,6 +115,5 @@ class GuruController extends Controller
     public function delete($id_guru){
         $this->GuruModel->deleteData($id_guru);
         return redirect()->route('guru')->with('pesan','Data Berhasil di Hapus !!!');
->>>>>>> khanif453
     }
 }
