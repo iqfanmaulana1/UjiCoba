@@ -3,11 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\GuruController;
-<<<<<<< HEAD
-=======
 use App\Http\Controllers\SiswaController;
 use App\Http\Controllers\UserController;
->>>>>>> khanif453
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -47,12 +44,6 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 // });
 
-<<<<<<< HEAD
-Route::get('/',[HomeController::class, 'index']);
-Route::get('/guru',[GuruController::class, 'index']);
-
-=======
 // Route::group(['middleware' => 'user'], function(){
     Route::get('/user', [UserController::class,'index']);
 // });
->>>>>>> khanif453
