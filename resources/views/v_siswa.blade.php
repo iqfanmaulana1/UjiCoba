@@ -2,9 +2,6 @@
 @section('title', 'Siswa')
 
 @section('content')
-<<<<<<< HEAD
-     <h1>Ini halaman Siswa</h1>
-=======
 <a href="/siswa/add" class="btn btn-primary">Add</a>
 @if (session('pesan'))
     <div class="alert alert-success alert_dismissable">
@@ -71,5 +68,4 @@
           <!-- /.modal-dialog -->
     </div>
     @endforeach
->>>>>>> khanif453
 @endsection
