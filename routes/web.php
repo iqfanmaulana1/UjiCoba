@@ -31,9 +31,9 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 // });
 
 // Route::group(['middleware' => 'siswa'], function(){
-    // Route::get('/siswa', [SiswaController::class,'index']);
-    // Route::get('/siswa/print', [SiswaController::class,'print']);
-    // Route::get('/siswa/printpdf', [SiswaController::class,'printpdf']);
+    Route::get('/siswa', [SiswaController::class,'index']);
+    Route::get('/siswa/print', [SiswaController::class,'print']);
+    Route::get('/siswa/printpdf', [SiswaController::class,'printpdf']);
     Route::get('/siswa', [SiswaController::class,'index'])->name('siswa');
     Route::get('/siswa/detail/{id_siswa}', [SiswaController::class,'detail']);
     Route::get('/siswa/add', [SiswaController::class,'add']);

@@ -125,4 +125,24 @@ class SiswaController extends Controller
         $this->SiswaModel->deleteData($id_siswa);
         return redirect()->route('siswa')->with('pesan','Data Berhasil di Hapus !!!');
     }
+
+    public function print(){
+        $data = [
+            'siswa' => $this->SiswaModel->allData(),
+        ];
+        return view('v_print', $data);
+    }
+    
+    // public function printpdf(){
+    //     $data = [
+    //         'siswa' => $this->SiswaModel->allData(),
+    //     ];
+    //     $html = view('v_printpdf', $data);
+
+    //     $dompdf = new Dompdf();
+    //     $dompdf->loadHtml($html);
+    //     $dompdf->setPaper('A4', 'Landscape');
+    //     $dompdf->render();
+    //     $dompdf->stream();
+    // }
 }

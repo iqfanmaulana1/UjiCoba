@@ -42,8 +42,8 @@
             @endforeach
         </tbody>
 </table>
-<!-- <a href="/siswa/print" target="_blank" class="btn btn-primary">Print printer</a>
-<a href="/siswa/printpdf" target="_blank" class="btn btn-success">Print PDF</a> -->
+<a href="/siswa/print" target="_blank" class="btn btn-success">Print printer</a>
+<!-- <a href="/siswa/printpdf" target="_blank" class="btn btn-success">Print PDF</a> -->
 
 
 @foreach($siswa as $data)
