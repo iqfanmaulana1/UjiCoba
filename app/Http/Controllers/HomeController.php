@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
+<<<<<<< HEAD
     public function index()
     {
         $data = [
@@ -18,5 +19,25 @@ class HomeController extends Controller
     public function about($id)
     {
         return 'Ini Halaman About</br>'. $id;
+=======
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        // $this->middleware('auth');
+    }
+
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function index()
+    {
+        return view('v_home');
+>>>>>>> khanif453
     }
 }
