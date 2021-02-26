@@ -130,7 +130,7 @@ class SiswaController extends Controller
         $data = [
             'siswa' => $this->SiswaModel->allData(),
         ];
-        return view('v_print', $data);
+        return view('v_printsiswa', $data);
     }
     
     // public function printpdf(){
