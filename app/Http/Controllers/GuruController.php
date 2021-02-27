@@ -9,6 +9,7 @@ class GuruController extends Controller
 {
     public function __construct(){
         $this->GuruModel = new GuruModel();
+        $this->middleware('auth');
     }
 
     public function index(){
@@ -116,4 +117,12 @@ class GuruController extends Controller
         $this->GuruModel->deleteData($id_guru);
         return redirect()->route('guru')->with('pesan','Data Berhasil di Hapus !!!');
     }
+
+    public function print(){
+        $data = [
+            'guru' => $this->GuruModel->allData(),
+        ];
+        return view('v_printguru', $data);
+    }
+    
 }

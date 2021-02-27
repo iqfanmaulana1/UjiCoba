@@ -22,6 +22,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 // Route::group(['middleware' => 'admin'], function(){
     Route::get('/guru', [GuruController::class,'index'])->name('guru');
+    Route::get('/guru/print', [GuruController::class,'print']);
     Route::get('/guru/detail/{id_guru}', [GuruController::class,'detail']);
     Route::get('/guru/add', [GuruController::class,'add']);
     Route::post('/guru/insert', [GuruController::class,'insert']);
@@ -31,8 +32,8 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 // });
 
 // Route::group(['middleware' => 'siswa'], function(){
-    // Route::get('/siswa', [SiswaController::class,'index']);
-    // Route::get('/siswa/print', [SiswaController::class,'print']);
+    Route::get('/siswa', [SiswaController::class,'index']);
+    Route::get('/siswa/print', [SiswaController::class,'print']);
     // Route::get('/siswa/printpdf', [SiswaController::class,'printpdf']);
     Route::get('/siswa', [SiswaController::class,'index'])->name('siswa');
     Route::get('/siswa/detail/{id_siswa}', [SiswaController::class,'detail']);
@@ -47,3 +48,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 // Route::group(['middleware' => 'user'], function(){
     Route::get('/user', [UserController::class,'index']);
 // });
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
